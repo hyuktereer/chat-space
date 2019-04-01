@@ -10,56 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require font-awesome
-
  */
 @import "./reset";
-
-html, body{
-  height: 100%;
-  a:visited { color:white; text-decoration:none }
-  a {text-decoration: none}
-
-
-}
-
-.sidebar{
-  width: 300px;
-  height: 100%;
-  float: left;
-  color: #ffffff;
-
-  &__user-container{
-    background-color: #253141;
-    height: 100px;
-    padding: 0 20px;
-    line-height: 100px;
-    font-weight: bold;
-    &__name{
-      float: left;
-    }
-    &__icon{
-      float: right;
-    }
-  }
-  &__group-container{
-    background-color:#2f3e51;
-    height: 100%;
-    padding: 0 20px;
-    overflow: scroll;
-    &__name{
-      font-size: 15px;
-      margin-top: 20px;
-
-    }
-    &__latest-message{
-      font-size: 11px;
-      margin-top: 5px;
-      margin-bottom: 40px;
-      word-wrap: break-word;
-    }
-
-  }
-}
+@import "./variable";
+@import "./index";

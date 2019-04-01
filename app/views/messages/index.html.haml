@@ -1,24 +1,66 @@
-%div.sidebar
-  %div.sidebar__user-container
-    %div.sidebar__user-container__name
-      しゅうと
-    %div.sidebar__user-container__icon
-      = link_to root_path do
-        %i.fa.fa-pencil-square-o
-      = link_to root_path do
-        %i.fa.fa-cog
+%div.flash-box
+  グループを作成しました。
 
-  %div.sidebar__group-container
+%div.wrapper
+  %div.chat-side
+    %div.side-header
+      %div.side-header__name
+        しゅうと
+      %div.side-header__icon
+        = link_to root_path do
+          %i.fa.fa-pencil-square-o
+        = link_to root_path do
+          %i.fa.fa-cog
 
-    %div.sidebar__group-container__name
-      fffffffffffffffffffffffffffffffffffffffffffffffvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+    %div.group
 
-    %div.sidebar__group-container__latest-message
-      ffffffffffffffffffffffffffff
+      %div.group__name
+        fffffffffffffffffffffffffffffffffffffffffffffffvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+      %div.group__latest-message
+        ffffffffffffffffffffffffffff
 
 
-    %div.sidebar__group-container__name
-      fffffffffffffffffffffffffffffffffffffffffffffffvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+      %div.group__name
+        fffffffffffffffffffffffffffffffffffffffffffffffvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-    %div.sidebar__group-container__latest-message
-      fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+      %div.group__latest-message
+        fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  %div.chat-main
+    %div.main-header
+      %div.main-header__left-box
+        %p.main-header__left-box__current-group
+          チームD
+        %p.main-header__left-box__member-list
+          Member：しゅうと
+      %div.main-header__edit-btn
+        = link_to "Edit", root_path, :style=>"color: #38aef0;"
+    %div.messages
+      %div.message
+        %div.message-upper-info
+          %p.message-upper-info__talker
+            しゅうと
+          %p.message-upper-info__date
+            2019/03/29(Fri) 10:11:10
+        %div.message__text
+          ttttttttttttttttttttttttttttttttttt
+      %div.message
+        %div.message-upper-info
+          %p.message-upper-info__talker
+            しゅうと
+          %p.message-upper-info__date
+            2019/03/29(Fri) 10:11:10
+        %div.message__text
+          ttttttttttttttttttttttttttttttttttt
+
+    %div.form
+      = form_for @message, class: "new_message" do |f|
+        %div.input-box
+          =f.text_field :message, placeholder: "type a message", class: "input-box__text"
+          %label.upload-label{for: "upload-icon" ,class: "input-box__image"}
+            %i.fa.fa-picture-o
+            = f.file_field :image, id: "upload-icon", style: "display:none;"
+        =f.submit "Send", class: "send-btn"
+
+
+
