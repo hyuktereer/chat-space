@@ -57,9 +57,9 @@
       = form_for @message, class: "new_message" do |f|
         %div.input-box
           =f.text_field :message, placeholder: "type a message", class: "input-box__text"
-          %label.upload-label{for: "upload-icon" ,class: "input-box__image"}
+          %label.upload-label{for: "upload-icon" , class: "input-box__image"}
             %i.fa.fa-picture-o
-            = f.file_field :image, id: "upload-icon", style: "display:none;"
+            = f.file_field :image, id: "upload-icon", class: "file-field"
         =f.submit "Send", class: "send-btn"
 
 

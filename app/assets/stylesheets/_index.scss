@@ -166,6 +166,9 @@ html, body{
     cursor: pointer;
   }
 }
+.file-field{
+  display: none;
+}
 
 .send-btn{
     background-color: $background-color-skyblue;
