@@ -1,15 +1,13 @@
-%div.flash-box
-  グループを作成しました。
 
 %div.wrapper
   %div.chat-side
     %div.side-header
       %div.side-header__name
-        しゅうと
+        = current_user.name
       %div.side-header__icon
         = link_to root_path do
           %i.fa.fa-pencil-square-o
-        = link_to root_path do
+        = link_to edit_user_path(current_user) do
           %i.fa.fa-cog
 
     %div.group
