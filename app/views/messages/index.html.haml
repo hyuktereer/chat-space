@@ -1,29 +1,6 @@
-
 %div.wrapper
-  %div.chat-side
-    %div.side-header
-      %div.side-header__name
-        = current_user.name
-      %div.side-header__icon
-        = link_to root_path do
-          %i.fa.fa-pencil-square-o
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog
+  = render 'groups/index'
 
-    %div.group
-
-      %div.group__name
-        fffffffffffffffffffffffffffffffffffffffffffffffvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-
-      %div.group__latest-message
-        ffffffffffffffffffffffffffff
-
-
-      %div.group__name
-        fffffffffffffffffffffffffffffffffffffffffffffffvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-
-      %div.group__latest-message
-        fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   %div.chat-main
     %div.main-header
       %div.main-header__left-box
@@ -52,7 +29,7 @@
           ttttttttttttttttttttttttttttttttttt
 
     %div.form
-      = form_for @message, class: "new_message" do |f|
+      = form_for @message, url: groups_path, class: "new_message" do |f|
         %div.input-box
           =f.text_field :body, placeholder: "type a message", class: "input-box__text"
           %label.upload-label{for: "upload-icon" , class: "input-box__image"}
