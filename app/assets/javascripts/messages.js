@@ -38,14 +38,12 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
+      var message = $('.messages')[0].scrollHeight;
       $('.messages').append(html);
       $('.input-box__text').val('');
-      var message = $('.messages')[0].scrollHeight;
       $('.messages').animate({
-      scrollTop: message
-
-    }, 200);
-
+      scrollTop: message}, 200);
+      $(".new_message")[0].reset();
     })
     .fail(function(){
       alert('メッセージを入力してください');
