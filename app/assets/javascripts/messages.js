@@ -38,7 +38,6 @@ $(function(){
       var html = buildHTML(data);
       var message = $('.messages')[0].scrollHeight;
       $('.messages').append(html);
-      $('.input-box__text').val('');
       $('.messages').animate({
       scrollTop: message}, 200);
       $(".new_message")[0].reset();
