@@ -18,6 +18,9 @@ html, body{
   height: 100%;
   float: left;
   color: $color-white;
+  a{
+    color: $color-white;
+  }
 
 .side-header{
     background-color: $background-color-side-header;
