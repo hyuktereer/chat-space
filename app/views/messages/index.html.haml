@@ -7,9 +7,12 @@
         %p.main-header__left-box__current-group
           = @group.name
         %p.main-header__left-box__member-list
-          Member：しゅうと
+          Member:
+          - @group.users.each do |user|
+            =user.name
+
       %div.main-header__edit-btn
-        = link_to "Edit", root_path, :style=>"color: #38aef0;"
+        = link_to "Edit",  edit_group_path(@group), :style=>"color: #38aef0;"
     %div.messages
       = render @messages
 
