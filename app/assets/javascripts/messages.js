@@ -34,10 +34,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      var message = $('.messages')[0].scrollHeight;
+      var height = $('.messages')[0].scrollHeight;
       $('.messages').append(html);
       $('.messages').animate({
-      scrollTop: message}, 200);
+      scrollTop: height}, 200);
       $(".new_message")[0].reset();
     })
     .fail(function(){
