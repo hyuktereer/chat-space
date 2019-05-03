@@ -55,9 +55,12 @@ $(function(){
       alert('errorだよ')
     });
   };  
-    //
-  setInterval(reloadMessages, 5000);
-
+  
+  var pathname = location.pathname.match(/messages/)
+  var reg = RegExp(pathname);
+  if(reg.test("messages")){
+    setInterval(reloadMessages, 5000);
+  }
   $('.message').on('click', function(){
     reloadMessages
   });
