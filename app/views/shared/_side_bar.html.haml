@@ -3,9 +3,9 @@
     %div.side-header__name
       = current_user.name
     %div.side-header__icon
-      = link_to  new_group_path do
+      = link_to new_group_path, data: {"turbolinks" => false} do 
         %i.fa.fa-pencil-square-o
-      = link_to edit_user_path(current_user) do
+      = link_to edit_user_path(current_user), data: {"turbolinks" => false} do
         %i.fa.fa-cog
 
   %div.group

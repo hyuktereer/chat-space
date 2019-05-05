@@ -12,7 +12,8 @@
             =user.name
 
       %div.main-header__edit-btn
-        = link_to "Edit",  edit_group_path(@group), :style=>"color: #38aef0;"
+        = link_to "Edit",  edit_group_path(@group), :style=>"color: #38aef0;", data: {"turbolinks" => false}
+
     %div.messages
       = render @messages
 

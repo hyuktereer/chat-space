@@ -1,5 +1,4 @@
-$(function(){
-
+$(document).on('turbolinks:load',function(){
 var search_list = $("#user-search-result");
 function appendUser(user){
       var html = `<div class="chat-group-user clearfix">
@@ -47,8 +46,6 @@ function appendGroupList(name, id) {
       else {
         appendErrMsgToHTML("一致するユーザーが見つかりません");
       }
-
-    
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました');

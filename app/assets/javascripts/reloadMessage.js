@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   function insertHTML(message){
     var img = (message.image == null) ? '' : `<img src= ${message.image} class= "lower-message__image">`
 
@@ -47,9 +47,11 @@ $(function(){
         $('.messages').append(html);
       });
       //メッセージ分だけスクロール
-      var height = $('.messages')[0].scrollHeight;
-      $('.messages').animate({
-      scrollTop: height}, 200);      
+      if(html.length != 0){
+        var height = $('.messages')[0].scrollHeight;
+        $('.messages').animate({
+        scrollTop: height}, 200);      
+      }
     })
     .fail(function(){
       alert('errorだよ')
@@ -61,7 +63,4 @@ $(function(){
   if(reg.test("messages")){
     setInterval(reloadMessages, 5000);
   }
-  $('.message').on('click', function(){
-    reloadMessages
-  });
 });
